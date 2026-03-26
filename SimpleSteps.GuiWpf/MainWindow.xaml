@@ -7,7 +7,26 @@
         mc:Ignorable="d"
         Title="SimpleSteps" Height="800" Width= "800">
     <Grid>
-        <Button Content="Button"  Height="50" Width="150"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*" />
+            <ColumnDefinition Width="90*" />
+            <ColumnDefinition Width="5*" />
+        </Grid.ColumnDefinitions>
+
+        <DataGrid x:Name="grdAppUsers" Grid.Column="1" Grid.Row="2" AutoGenerateColumns="True" />
 
     </Grid>
+    
+    
+  
+    
+    
+    
 </Window>

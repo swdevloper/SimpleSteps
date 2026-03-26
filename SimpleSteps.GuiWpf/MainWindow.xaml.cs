@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using SimpleSteps.Business.Services;
+using SimpleSteps.Model;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,9 +18,17 @@ namespace SimpleSteps.GuiWpf
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        private readonly AppUserService _appUserService;
+
+
+        public MainWindow(AppUserService appUserService)
         {
             InitializeComponent();
+
+            _appUserService = appUserService;
+            var userList = _appUserService.GetAllUsers();
+            this.grdAppUsers.ItemsSource = userList;
+
         }
     }
 }
