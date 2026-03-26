@@ -46,5 +46,11 @@ namespace SimpleSteps.GuiWpf
             }
 
         }
+
+        private void btnLoadAppUsers_Click(object sender, RoutedEventArgs e)
+        {
+            this.grdAppUsers.ItemsSource = null;
+            this.grdAppUsers.ItemsSource = _appUserService.GetAllUsers();
+        }
     }
 }
