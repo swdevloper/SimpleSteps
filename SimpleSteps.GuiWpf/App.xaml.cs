@@ -53,6 +53,9 @@ namespace SimpleSteps.GuiWpf
                     //    context.Configuration.GetSection("AppSettings"));
 
                     services.AddScoped<AppUserService>();
+                    services.AddScoped<LocationService>();
+                    services.AddScoped<RoomService>();
+
                     services.AddTransient<MainWindow>();
                     //services.AddTransient<MainWindowViewModel>();
                     

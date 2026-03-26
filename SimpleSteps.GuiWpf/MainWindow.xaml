@@ -20,8 +20,10 @@
             <ColumnDefinition Width="5*" />
         </Grid.ColumnDefinitions>
 
-        <DataGrid x:Name="grdAppUsers" Grid.Column="1" Grid.Row="2" AutoGenerateColumns="True" />
-
+        <DataGrid x:Name="grdAppUsers" Grid.Column="1" Grid.Row="0" AutoGenerateColumns="True" />
+        <DataGrid x:Name="grdLocations" Grid.Column="1" Grid.Row="1" AutoGenerateColumns="True" />
+        <DataGrid x:Name="grdRooms" Grid.Column="1" Grid.Row="2" AutoGenerateColumns="True" />
+        <DataGrid x:Name="grdRoomsByLocation" Grid.Column="1" Grid.Row="3" AutoGenerateColumns="True" />
     </Grid>
     
     
