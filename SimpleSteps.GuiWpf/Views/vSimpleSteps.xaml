@@ -1,0 +1,70 @@
+﻿<Window x:Class="SimpleSteps.GuiWpf.Views.vSimpleSteps"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimpleSteps.GuiWpf.Views"
+        mc:Ignorable="d"
+        Title="{Binding WindowTitle}" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Row="0" x:Name="menMain">
+            <MenuItem Header="Datei" />
+            <MenuItem Header="Bearbeiten"/>
+            <MenuItem Header="Hilfe"/>
+        </Menu>
+        
+        
+        <TabControl Grid.Row="1" x:Name="tabMain">
+            <TabItem Header="Dashboard" x:Name="taiDashboard">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50*"/>
+                        <RowDefinition Height="50*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50*"/>
+                        <ColumnDefinition Width="50*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" Content="Raumklima"  />
+                    <Label Grid.Row="0" Grid.Column="1" Content="Trinkmenge"  />
+                    <Label Grid.Row="1" Grid.Column="0" Content="Chart Raumklima"  />
+                    <Label Grid.Row="1" Grid.Column="1" Content="Chart Trinkmenge"  />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Daten" x:Name="taiData">
+                <StackPanel>
+
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Klienten" x:Name="taiPersons">
+                <StackPanel>
+
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Vorhersage" x:Name="taiForecast">
+                <StackPanel>
+
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+        
+        
+        
+        <StatusBar Grid.Row="2" x:Name="staStatusbar">
+            <StackPanel Orientation="Horizontal">
+                <Label  Content="Datenstand vom: "/>
+                <Label x:Name="lblLastData" Content="{Binding LastData}"/>
+                <Label Content="Letzte Aktualisierung: "/>
+                <Label x:Name="lblLastForecast" Content="{Binding LastForecast}"/>
+            </StackPanel>
+        </StatusBar>
+        
+    </Grid>
+</Window>

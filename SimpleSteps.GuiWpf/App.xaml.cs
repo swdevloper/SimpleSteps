@@ -1,13 +1,12 @@
-﻿using Microsoft.Extensions.Hosting;
-using Serilog;
-using System.Configuration;
-using System.Data;
-using System.Windows;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using SimpleSteps.Data;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
+using Serilog;
 using SimpleSteps.Business.Services;
+using SimpleSteps.Data;
+using SimpleSteps.GuiWpf.Views;
+using System.Windows;
 
 
 
@@ -56,24 +55,23 @@ namespace SimpleSteps.GuiWpf
                     services.AddScoped<LocationService>();
                     services.AddScoped<RoomService>();
 
-                    services.AddTransient<MainWindow>();
+                    //Auskommentiert aufgrund neuem Startfenster
+                    //services.AddTransient<MainWindow>();
+                    services.AddTransient<vSimpleSteps>();
+
                     //services.AddTransient<MainWindowViewModel>();
-                    
 
                 })
                 .Build();
 
             Log.Information("Services initalized");
-  
-            var mainWindow = AppHost.Services.GetRequiredService<MainWindow>();
+
+            //Auskommentiert aufgrund neuem Startfenster
+            //var mainWindow = AppHost.Services.GetRequiredService<MainWindow>();
+            var mainWindow = AppHost.Services.GetRequiredService<vSimpleSteps>();
             mainWindow.WindowStyle = WindowStyle.SingleBorderWindow;
             mainWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            mainWindow.Show(); 
-
+            mainWindow.Show();
         }
-
-
-
     }
-
 }
